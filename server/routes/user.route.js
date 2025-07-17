@@ -1,0 +1,11 @@
+const express=require("express");
+const { register, login, logout, getUserProfile, updateProfile } = require("../controllers/user.controller");
+const { isAuthenticated } = require("../meddlewares/isAuthenticated");
+const upload = require("../utils/multer");
+const router=express.Router();
+router.route("/register").post(register);
+router.route("/login").post(login);
+router.route("/logout").get(logout);
+router.route("/profile").get(isAuthenticated,getUserProfile);
+router.route("/profile/update").put(isAuthenticated, upload.single("profilePhoto"), updateProfile);
+module.exports = router;
