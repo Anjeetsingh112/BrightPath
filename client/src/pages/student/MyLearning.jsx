@@ -1,5 +1,5 @@
 import React from "react";
-import Course from "./course";
+import Course from "./Course";
 import { useLoadUserQuery } from "@/features/api/authApi";
 
 const MyLearning = () => {
