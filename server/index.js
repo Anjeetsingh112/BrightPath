@@ -8,7 +8,7 @@ const courseRoute = require("./routes/course.route");
 const mediaRoute = require("./routes/media.route");
 const coursePurchaseRoute = require("./routes/coursePurchase.route");
 const courseProgrssRoute = require("./routes/courseProgress.route");
-const path = requrie("path");
+const path = require("path");
  dotenv.config({});
 // call data base here
 connectDB();
@@ -19,7 +19,7 @@ const _dirname=path.resolve();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin:[
+    origin:['https://brightpath-bil5.onrender.com',
   'http://localhost:5173'
 ], 
     methods: ["GET", "POST", "PUT","PATCH", "DELETE"],

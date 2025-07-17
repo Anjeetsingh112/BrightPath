@@ -63,7 +63,7 @@ const CheckoutPage = () => {
           try {
             // Verify payment with backend
             await axios.post(
-              "http://localhost:8080/api/v1/course-purchase/verify-payment",
+              "https://brightpath-bil5.onrender.com/api/v1/course-purchase/verify-payment",
               {
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,

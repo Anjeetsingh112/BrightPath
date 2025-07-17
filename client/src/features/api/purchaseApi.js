@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const COURSE_PURCHASE_API = "http://localhost:8080/api/v1/course-purchase/";
+const COURSE_PURCHASE_API = "https://brightpath-bil5.onrender.com/api/v1/course-purchase/";
 
 export const purchaseApi = createApi({
   reducerPath: "purchaseApi",
