@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Login } from "./pages/Login";
 import { HeroSection } from "./pages/student/HeroSection";
 import Courses from "./pages/student/Courses";
-import MyLearning from "./pages/student/Mylearning";
+import MyLearning from "./pages/student/MyLearning";
 import Profile from "./pages/student/Profile";
 
 // Admin
