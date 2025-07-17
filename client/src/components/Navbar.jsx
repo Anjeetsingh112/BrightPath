@@ -25,7 +25,7 @@ import { useLogoutUserMutation } from "@/features/api/authApi";
 import { useEffect } from "react";
 import { toast } from "sonner";
 import { useSelector } from "react-redux";
-import DarkMode from "@/Darkmode";
+import DarkMode from "@/DarkMode";
 
 const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
