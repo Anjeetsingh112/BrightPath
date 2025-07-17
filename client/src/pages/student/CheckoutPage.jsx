@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent} from "@/components/ui/card";
 import { useCreateCheckoutMutation, useGetCourseDetailWithStatusQuery } from "@/features/api/purchaseApi";
 import { toast } from "sonner";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { purchaseApi } from "@/features/api/purchaseApi";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+
 
 const CheckoutPage = () => {
   const { courseId } = useParams();
