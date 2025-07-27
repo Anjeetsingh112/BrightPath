@@ -5,6 +5,7 @@ const USER_API = "https://brightpath-bil5.onrender.com/api/v1/user/"
 
 export const authApi = createApi({
     reducerPath:"authApi",
+     tagTypes: ["User"],
     baseQuery:fetchBaseQuery({
         baseUrl:USER_API,
         credentials:'include'
@@ -50,6 +51,7 @@ export const authApi = createApi({
                 url:"profile",
                 method:"GET"
             }),
+              providesTags: ["User"],
             async onQueryStarted(_, {queryFulfilled, dispatch}) {
                 try {
                     const result = await queryFulfilled;
@@ -65,7 +67,8 @@ export const authApi = createApi({
                 method:"PUT",
                 body:formData,
                 credentials:"include"
-            })
+            }),
+            invalidatesTags: ["User"],
         })
     })
 });

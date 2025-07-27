@@ -3,6 +3,7 @@ const COURSE_PROGRESS_API = "https://brightpath-bil5.onrender.com/api/v1/progres
 
 export const courseProgressApi = createApi({
   reducerPath: "courseProgressApi",
+  tagTypes: ["Progress"],
   baseQuery: fetchBaseQuery({
     baseUrl: COURSE_PROGRESS_API,
     credentials: "include",
@@ -13,27 +14,30 @@ export const courseProgressApi = createApi({
         url: `/${courseId}`,
         method: "GET",
       }),
+      providesTags: ["Progress"],
     }),
     updateLectureProgress: builder.mutation({
       query: ({ courseId, lectureId }) => ({
         url: `/${courseId}/lecture/${lectureId}/view`,
         method:"POST"
       }),
+      invalidatesTags: ["Progress"],
     }),
 
     completeCourse: builder.mutation({
         query:(courseId) => ({
             url:`/${courseId}/complete`,
             method:"POST"
-        })
+        }),
+        invalidatesTags: ["Progress"],
     }),
     inCompleteCourse: builder.mutation({
         query:(courseId) => ({
             url:`/${courseId}/incomplete`,
             method:"POST"
-        })
+        }),
+         invalidatesTags: ["Progress"],
     }),
-    
   }),
 });
 export const {

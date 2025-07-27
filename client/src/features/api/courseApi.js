@@ -73,6 +73,7 @@ export const courseApi = createApi({
         method: "POST",
         body: { lectureTitle },
       }),
+      invalidatesTags: ["Refetch_Creator_Course"],
     }),
     getCourseLecture: builder.query({
       query: (courseId) => ({
@@ -120,6 +121,7 @@ export const courseApi = createApi({
         url: `/${courseId}/publish?publish=${publish}`,
         method: "PATCH",
       }),
+      invalidatesTags: ["Refetch_Creator_Course"],
     }),
   }),
 });

@@ -4,6 +4,7 @@ const COURSE_PURCHASE_API = "https://brightpath-bil5.onrender.com/api/v1/course-
 
 export const purchaseApi = createApi({
   reducerPath: "purchaseApi",
+  tagTypes: ["Purchase"],
   baseQuery: fetchBaseQuery({
     baseUrl: COURSE_PURCHASE_API,
     credentials: "include",
@@ -15,18 +16,21 @@ export const purchaseApi = createApi({
         method: "POST",
         body: {courseId},
       }),
+      invalidatesTags: ["Purchase"],
     }),
     getCourseDetailWithStatus: builder.query({
       query: (courseId) =>({
         url: `/course/${courseId}`,
         method: "GET",
       }), 
+      providesTags: ["Purchase"],
     }),
     getPurchasedCourses: builder.query({
       query: () => ({
         url: `/`,
         method: "GET",
       }),
+       providesTags: ["Purchase"],
     }),
   }),
 });
